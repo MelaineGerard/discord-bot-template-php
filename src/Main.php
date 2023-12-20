@@ -12,6 +12,7 @@ use Monolog\Handler\RotatingFileHandler;
 use Monolog\Level;
 use Monolog\Logger;
 use ReflectionException;
+use Symfony\Component\Dotenv\Dotenv;
 
 class Main
 {
@@ -22,6 +23,7 @@ class Main
     )
     {
         try {
+            $this->initDotenv();
             $this->init();
             $this->addEvents();
 
@@ -58,5 +60,11 @@ class Main
             $eventInstance = new $event($this->reflectionUtils);
             $this->discord->on($eventInstance->getEventName(), $eventInstance->handle());
         }
+    }
+
+    private function initDotenv(): void
+    {
+        $dotenv = new Dotenv();
+        $dotenv->loadEnv(__DIR__ . '/../.env');
     }
 }
