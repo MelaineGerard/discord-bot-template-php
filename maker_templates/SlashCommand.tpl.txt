@@ -1,0 +1,32 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ use_statements }}
+
+class {{ className }} implements CommandInterface
+{
+    public function handle(): \Closure
+        {
+            return function (Interaction $interaction) {
+                $interaction->acknowledgeWithResponse(true)->done();
+                $interaction->updateOriginalResponse(
+                    MessageBuilder::new()
+                        ->setContent("Commande executée avec succès")
+                )->done();
+            };
+        }
+
+        public function getCommandName(): string
+        {
+            return "{{ command_name }}";
+        }
+
+        public function getCommandData(Discord $discord): array
+        {
+            return CommandBuilder::new()
+                ->setName($this->getCommandName())
+                ->setDescription("{{ command_description }}")
+                ->toArray();
+        }
+}

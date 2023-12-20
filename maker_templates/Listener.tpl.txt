@@ -1,0 +1,23 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ use_statements }}
+
+class {{ className }} implements EventInterface
+{
+    public function __construct()
+    {}
+
+    public function handle(): Closure
+    {
+        return function (Discord $discord) {
+            $discord->getLogger()->info("{{ eventName }} event fired");
+        };
+    }
+
+    public function getEventName(): string
+    {
+        return "{{ eventName }}";
+    }
+}

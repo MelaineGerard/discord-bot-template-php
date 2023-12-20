@@ -1,0 +1,12 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ useStatements }}
+
+#[Entity(repositoryClass: {{ className }}Repository::class)]
+#[Table(name: '{{ tableName }}')]
+class {{ className }}
+{
+
+}

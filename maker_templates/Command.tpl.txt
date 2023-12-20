@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ use_statements }}
+
+#[AsCommand(
+    name: '{{ command_name }}',
+    description: 'Description de la commande',
+)]
+class {{ className }} extends Command
+{
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $io = new SymfonyStyle($input, $output);
+
+        $io->success('Commande lancée avec succès');
+
+        return Command::SUCCESS;
+    }
+}

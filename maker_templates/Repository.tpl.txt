@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ useStatements }}
+
+class {{ className }} extends EntityRepository
+{
+
+}

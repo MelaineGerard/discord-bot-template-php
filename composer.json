@@ -1,0 +1,23 @@
+{
+    "name": "melaine/test-discord-php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Melaine Gérard",
+            "email": "pro@melaine-gerard.fr"
+        }
+    ],
+    "require": {
+        "team-reflex/discord-php": "dev-master",
+        "doctrine/orm": "2.17.*",
+        "doctrine/dbal": "3.7.*",
+        "symfony/yaml": "7.0.*",
+        "symfony/cache": "7.0.*"
+    }
+}

@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+.fleet/
+*.iml
+
+vendor/
+
+*.sqlite
+
+.env
+.env.*
+!.env.example
+
+logs/
