@@ -38,7 +38,7 @@ class InitEvent implements EventInterface
     private function registerCommands(Discord $discord): void
     {
         $guild = $discord->guilds->get('id', "1033659360863342662");
-        $commands = $this->reflectionUtils->getImplementingClasses(CommandInterface::class, 'Commands');
+        $commands = $this->reflectionUtils->getImplementingClasses(CommandInterface::class, 'src/Commands');
 
         foreach ($commands as $command) {
             $commandInstance = new $command($this->reflectionUtils);

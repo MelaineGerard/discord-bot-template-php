@@ -15,7 +15,7 @@
     ],
     "require": {
         "team-reflex/discord-php": "dev-master",
-        "doctrine/orm": "2.17.*",
+        "doctrine/orm": "3.0.*",
         "doctrine/dbal": "3.7.*",
         "symfony/yaml": "7.0.*",
         "symfony/cache": "7.0.*",
